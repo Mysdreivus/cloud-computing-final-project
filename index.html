@@ -1,13 +1,47 @@
 <!DOCTYPE html>
 <html>
   <header>
-    <script src = "app.js"></script>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </header>
 
   <body>
-    <form>
-      <input type="text" name="Search for PDFs.."><br>
-
+    <h1 style="text-align:center">BigPDF</h1>
+     <form id = "query_bar">
+        <input id="searchQuery" type="text">
+        <select id="filterDropdown">
+          <option value="Title">Title</option>
+          <option value="Author">Author</option>
+          <option value="Publisher">Publisher</option>
+          <option value="Creator">Creator</option>
+        </select>
+        <button id = "searchButton" type = "submit">Search</button>
+        <button id = "uploadButton" type = "button">Upload</button>
     </form>
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="file" id="real-file" hidden="hidden">
+      Title:
+      <input type="text"  id="title"><br>
+      Author:
+      <input type="text" id="author"><br>
+      <button id="attachButton" type = "button">Attach</button>
+      <div id = "customTxt"></div>
+      <button id="submitButton" type = "button">Submit</button>
+    </div>
+  </div>
+
+<!-- Table Content -->
+<div id = "tableContent">
+</div>
+
+</div>
+  <script src = "app.js"></script>
   </body>
 </html>
